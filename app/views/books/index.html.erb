@@ -13,14 +13,12 @@
   </thead>
 
   <tbody>
-    <% @books.each do |book| %>
+    <% @books.recent.each do |book| %>
       <tr>
         <td><%= book.title %></td>
         <td><%= book.description %></td>
-        <td><%= book.category_id %></td>
-        <td><%= link_to 'Show', book %></td>
-        <td><%= link_to 'Edit', edit_book_path(book) %></td>
-        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= Category.find(book.category_id).name %></td>
+        <td><%= link_to 'Book page', book %></td>
       </tr>
     <% end %>
   </tbody>
