@@ -27,6 +27,9 @@ gem 'faker'
 
 gem 'pg'
 
+gem 'sunspot_rails'
+gem 'sunspot_solr'
+
 group :production do
     gem 'rails_12factor', '0.0.2'
 end

@@ -61,6 +61,16 @@ class CategoriesController < ApplicationController
     end
   end
 
+=begin  def index
+    @categories = Category.all
+      if params[:search]
+        @categories = Category.search(params[:search]).order("name DESC")
+      else
+        @categories = Category.all.order('name DESC')
+     end
+  end 
+=end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_category
@@ -71,4 +81,6 @@ class CategoriesController < ApplicationController
     def category_params
       params.require(:category).permit(:name)
     end
+    
+
 end

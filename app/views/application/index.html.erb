@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Books</h1>
+<h1>Search Results</h1>
 
 <table>
   <thead>
@@ -17,17 +17,8 @@
       <%= text_field_tag :search, params[:search], placeholder: "Search Categories and Books..." %>
       <%= submit_tag "Search" %>
       <% end %>
-    <% @books.recent.each do |book| %>
-      <tr>
-        <td><%= book.title %></td>
-        <td><%= book.description %></td>
-        <td><%= Category.find(book.category_id).name %></td>
-        <td><%= link_to 'Book page', book %></td>
-      </tr>
-    <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Book', new_book_path %>

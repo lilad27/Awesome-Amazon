@@ -61,6 +61,16 @@ class BooksController < ApplicationController
     end
   end
 
+=begin def index
+    @books = Book.all
+      if params[:search]
+        @books = Book.search(params[:search]).order("created_at DESC")
+      else
+        @books = Book.all.order('created_at DESC')
+    end
+  end
+=end 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_book
@@ -71,4 +81,5 @@ class BooksController < ApplicationController
     def book_params
       params.require(:book).permit(:title, :description, :category_id)
     end
+  
 end
