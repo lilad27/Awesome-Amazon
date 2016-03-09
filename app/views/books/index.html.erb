@@ -12,11 +12,13 @@
     </tr>
   </thead>
 
-  <tbody>
+  
       <%= form_tag(search_results_path, :method => "get", id: "search-form") do %>
-        <%= text_field_tag :search, params[:search], placeholder: "Search Categories and Books..." %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search" %>
         <%= submit_tag "Search" %>
       <% end %>
+      <br>
+      <tbody>
     <% @books.each do |book| %>
       <tr>
         <td><%= link_to book.title, book %></td>

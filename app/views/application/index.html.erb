@@ -1,14 +1,22 @@
-<h1>Search Results</h1>
-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  </head>
+  <body>
+    <title>Search Results</title>
+    <div class="col-lg-12">
+      <h1>Serach Results</h1>
+    </div>
+    <div class="wrap">
+      <div class="search">
+          <%= form_tag(search_results_path, :method => "get", id: "search-form") do %>
+            <%= text_field_tag :search, params[:search], placeholder: "Search"  %>
+            <%= submit_tag "Search" %>
+          <% end %>
+      </div>
+    </div>
 <table>
-  <thead>
-  </thead>
-
   <tbody>
-      <%= form_tag(search_results_path, :method => "get", id: "search-form") do %>
-        <%= text_field_tag :search, params[:search], placeholder: "Search Categories and Books..." %>
-        <%= submit_tag "Search" %>
-      <% end %>
      <% @results.each do |result| %>
       <% if result.type == "Book" %>
         <p>
@@ -26,6 +34,8 @@
 
   </tbody>
 </table>
+</div>
+</body>
 
-<br>
+</html>
 
