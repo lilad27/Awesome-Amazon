@@ -27,8 +27,7 @@ gem 'faker'
 
 gem 'pg'
 
-gem 'sunspot_rails'
-gem 'sunspot_solr'
+gem 'textacular'
 
 group :production do
     gem 'rails_12factor', '0.0.2'

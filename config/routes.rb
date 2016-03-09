@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :books
   resources :categories
   root 'books#index'
-  get 'search_result' =>'application#index'
+  get 'search_results' => 'application#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

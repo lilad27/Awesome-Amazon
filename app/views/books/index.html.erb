@@ -13,9 +13,9 @@
   </thead>
 
   <tbody>
-      <%= form_tag(search_result_path, :method => "get", id: "search-form") do %>
-      <%= text_field_tag :search, params[:search], placeholder: "Search Categories and Books..." %>
-      <%= submit_tag "Search" %>
+      <%= form_tag(search_results_path, :method => "get", id: "search-form") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search Categories and Books..." %>
+        <%= submit_tag "Search" %>
       <% end %>
     <% @books.recent.each do |book| %>
       <tr>
@@ -30,4 +30,3 @@
 
 <br>
 
-<%= link_to 'New Book', new_book_path %>

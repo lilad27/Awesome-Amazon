@@ -14,9 +14,14 @@
     <% @categories.each do |category| %>
       <tr>
         <td><%= category.name %></td>
-        <td><%= link_to 'Show', category %></td>
-        <td><%= link_to 'Edit', edit_category_path(category) %></td>
-        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    <% @books.recent.each do |book| %>
+      <tr>
+        <td><%= book.title %></td>
+        <td><%= book.description %></td>
+        <td><%= Category.find(book.category_id).name %></td>
+        <td><%= link_to 'Book page', book %></td>
       </tr>
     <% end %>
   </tbody>
