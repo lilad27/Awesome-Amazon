@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :search_suggestions
+  resources :search_seggestions
   resources :books
   resources :categories
   root 'books#index'
