@@ -5,8 +5,9 @@ class ApplicationController < ActionController::Base
   
   def index
     if params[:search].present?
-      @books = Search.new(query: params[:search]).results
-      @categories = Search.new(query: params[:search]).results
+      @books = Book.search(params[:search])
+      @categories = Category.search(params[:search])
+      @results = (@books + @categories).take(10).shuffle
     end
   end
 end

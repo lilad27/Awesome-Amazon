@@ -4,7 +4,7 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.all
+    @books = Book.recent
   end
 
   # GET /books/1
@@ -60,16 +60,6 @@ class BooksController < ApplicationController
       format.json { head :no_content }
     end
   end
-
-=begin def index
-    @books = Book.all
-      if params[:search]
-        @books = Book.search(params[:search]).order("created_at DESC")
-      else
-        @books = Book.all.order('created_at DESC')
-    end
-  end
-=end 
 
   private
     # Use callbacks to share common setup or constraints between actions.

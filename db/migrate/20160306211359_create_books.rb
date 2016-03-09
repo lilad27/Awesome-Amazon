@@ -4,7 +4,8 @@ class CreateBooks < ActiveRecord::Migration
       t.string :title
       t.text :description
       t.integer :category_id
-
+      t.string :type
+      
       t.timestamps null: false
     end
   end
